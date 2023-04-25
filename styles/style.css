@@ -1,0 +1,355 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bars {
+  position: fixed;
+  width: 23px;
+  display: block;
+  height: 20px;
+  right: 1.5rem;
+  top: 3rem;
+  z-index: 11;
+  transform: scale(0.85);
+  transform-origin: center;
+  display: none;
+}
+.bars .bar {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+}
+.bars .bar::before, .bars .bar::after {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  content: "";
+  background: #fff;
+  top: 8px;
+  border-radius: 2px;
+}
+.bars .bar::after {
+  width: 100%;
+  top: 17px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4rem 2rem 3rem;
+  max-width: 1500px;
+}
+.page h3.heading1 {
+  text-align: center;
+  color: hsla(0, 31%, 41%, 0.996);
+  font-size: 1.95rem;
+}
+.page p.heading2 {
+  text-align: center;
+  color: rgb(255, 186, 57);
+  font-size: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+.click {
+  background: hsla(0, 31%, 41%, 0.996);
+  padding: 1.1rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+.click:hover {
+  background: rgba(104, 55, 55, 0.996);
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+header .promotext {
+  text-align: center;
+  background: #f0f0f0;
+  height: 25px;
+  color: rgb(255, 186, 57);
+}
+header nav {
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem 2rem 2rem;
+  background: rgba(110, 6, 6, 0.3921568627);
+  align-items: flex-end;
+}
+header nav.opaque {
+  background: hsl(0, 31%, 65%);
+}
+header nav > a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.75em;
+  align-self: center;
+}
+header nav ul {
+  display: flex;
+  gap: 1.6rem;
+}
+header nav ul a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+header nav ul a:hover {
+  color: #ffcc6c;
+}
+
+main #hero {
+  position: relative;
+  height: calc(100vh - 100px);
+}
+main #hero .image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+main #hero .image img {
+  position: absolute;
+  filter: brightness(60%);
+}
+main #hero .introbox {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1100px;
+}
+main #hero .introbox .intro {
+  color: #fff;
+  font-size: 3.1rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+main #hero .introbox .click {
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+}
+main #products {
+  background: rgba(248, 242, 242, 0.996);
+}
+main #products .productgrid {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem 1rem;
+  margin-top: 2rem;
+}
+main #products .productgrid .product .image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+main #products .productgrid .product .details {
+  padding: 1rem;
+  background: #fff;
+  padding-bottom: 4rem;
+}
+main #products .productgrid .product .details .productname {
+  color: rgb(255, 186, 57);
+}
+main #products .productgrid .product .details .productdescription {
+  color: grey;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+}
+main #products .productgrid .product .details .productprice {
+  font-weight: 600;
+  color: #3d3d3d;
+  float: right;
+  padding-top: 1rem;
+}
+main #products .productgrid .product .details .click {
+  float: left;
+  transform: scale(0.85);
+  transform-origin: left;
+}
+main #about {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../aboutimage.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 3rem 0 5rem;
+}
+main #about .abouttext {
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 900px;
+  background: rgba(137, 72, 72, 0.373);
+  margin-top: 2rem;
+}
+main #testimonials {
+  padding: 3rem 0;
+}
+main #testimonials .testimonialflex {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(rgba(225, 225, 225, 0.95), rgba(225, 225, 225, 0.95)), url("../aboutimage.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: 4rem 0 3rem;
+}
+main #testimonials .testimonialflex .testimonial {
+  width: 50%;
+  padding: 3rem;
+}
+main #testimonials .testimonialflex .testimonial .name {
+  color: rgb(255, 186, 57);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+main #testimonials .testimonialflex .testimonial .content {
+  color: rgb(61, 61, 61);
+  padding: 0.4rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+}
+main #testimonials .testimonialflex .image {
+  width: 40%;
+  height: calc(300px + 5vw);
+}
+
+footer {
+  background: rgba(186, 125, 125, 0.996);
+  padding: 4rem 2rem;
+}
+footer .copy {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: -moz-max-content;
+  width: max-content;
+  text-align: center;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  main #hero .introbox .intro {
+    font-size: 2.55rem;
+    padding: 0 2rem;
+  }
+  main #products .productgrid {
+    padding: 4rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .bars {
+    display: block;
+  }
+  header nav {
+    padding: 1.5rem;
+    height: 65px;
+    background: hsl(0, 41%, 60%);
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav.active {
+    height: calc(100vh - 20px);
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: start;
+    gap: 4rem;
+  }
+  header nav.active .logo {
+    align-self: flex-start;
+  }
+  header nav.active ul {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 40vh;
+    justify-content: space-between;
+  }
+  header nav.active ul a {
+    text-align: center;
+  }
+  main #products .productgrid {
+    padding: 4rem 0;
+  }
+  main #testimonials .testimonialflex {
+    gap: 1rem;
+  }
+  main #testimonials .testimonialflex .image {
+    height: 300px;
+  }
+  main #testimonials .testimonialflex .testimonial {
+    padding: 1rem;
+    width: 55%;
+  }
+}
+@media (max-width: 700px) {
+  main #hero .introbox .intro {
+    font-size: 1.9rem;
+    padding: 1rem;
+  }
+  main #products .productgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main #about .abouttext {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .page {
+    padding: 4rem 0.65rem 3rem;
+  }
+  main #products .productgrid {
+    gap: 3rem 0.3rem;
+    padding: 4rem 0;
+  }
+  main #products .productgrid .product .details {
+    padding: 0.5rem 0.5rem 4rem;
+  }
+  #testimonials .testimonialflex {
+    flex-direction: column;
+  }
+  #testimonials .testimonialflex .image, #testimonials .testimonialflex .testimonial {
+    width: 100% !important;
+  }
+  #testimonials .testimonialflex .testimonial {
+    padding: 3rem 1rem !important;
+  }
+}/*# sourceMappingURL=style.css.map */

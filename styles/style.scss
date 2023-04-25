@@ -1,0 +1,312 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$primary: hsla(0, 31%, 41%, 0.996);
+$secondary : rgb(255, 186, 57);
+
+.bars{
+    position: fixed;
+    width: 23px;
+    display: block;
+    height: 20px;
+    // background: red;
+    right: 1.5rem;
+    top: 3rem;
+    z-index: 11;
+    transform: scale(.85);
+    transform-origin: center;
+    display: none;
+
+    .bar{
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 2px;
+        position: relative;
+
+        &::before,&::after{
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            content: "";
+            background: #fff;
+            top: 8px;
+            border-radius: 2px;
+        }
+
+        &::after{
+            width: 100%;
+            top: 17px;
+        }
+    }
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4rem 2rem 3rem;
+    max-width: 1500px;
+
+    h3.heading1 {
+        text-align: center;
+        color: $primary;
+        font-size: 1.95rem;
+    }
+
+    p.heading2 {
+        text-align: center;
+        color: $secondary;
+        font-size: 1.25rem;
+        padding: .5rem 0;
+    }
+}
+
+.click {
+    background: $primary;
+    padding: 1.1rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: .4rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+        background: darken($primary, 10);
+    }
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .promotext {
+        text-align: center;
+        background: #f0f0f0;
+        height: 25px;
+        color: $secondary;
+    }
+
+    nav {
+        height: 90px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem 2rem 2rem;
+        background: #6e060664;
+        align-items: flex-end;
+
+        &.opaque{
+            background: hsl(0, 31%, 65%);
+        }
+
+        &>a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.75em;
+            align-self: center;
+        }
+
+        ul {
+            display: flex;
+            gap: 1.6rem;
+
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1rem;
+
+                &:hover {
+                    color: lighten($secondary, 10);
+                }
+            }
+        }
+    }
+}
+
+
+main {
+    #hero {
+        position: relative;
+        height: calc(100vh - 100px);
+
+        .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            img {
+                position: absolute;
+                filter: brightness(60%);
+            }
+        }
+
+        .introbox {
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 65%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 1100px;
+
+            .intro {
+                color: #fff;
+                font-size: 3.1rem;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .click {
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    #products {
+        background: lighten($primary, 55);
+
+        .productgrid {
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5rem 1rem;
+            margin-top: 2rem;
+
+            .product {
+                .image {
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+                }
+
+                .details {
+                    padding: 1rem;
+                    background: #fff;
+                    padding-bottom: 4rem;
+
+                    .productname {
+                        color: $secondary;
+                    }
+
+                    .productdescription {
+                        color: grey;
+                        font-size: .8rem;
+                        padding: .5rem 0;
+                    }
+
+                    .productprice {
+                        font-weight: 600;
+                        color: #3d3d3d;
+                        float: right;
+                        padding-top: 1rem;
+                    }
+
+                    .click {
+                        float: left;
+                        transform: scale(.85);
+                        transform-origin: left;
+                    }
+                }
+            }
+        }
+    }
+
+    #about {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../aboutimage.jpg');
+        background-position: center;
+        background-size: cover;
+        padding: 3rem 0 5rem;
+
+        .abouttext {
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 900px;
+            background: rgba(137, 72, 72, 0.373);
+            margin-top: 2rem;
+        }
+
+    }
+
+    #testimonials {
+        padding: 3rem 0;
+
+        .testimonialflex {
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(rgba(225, 225, 225, 0.95), rgba(225, 225, 225, 0.95)),url('../aboutimage.jpg');
+            background-position: center;
+            background-size: cover;
+            margin: 4rem 0 3rem;
+
+            .testimonial {
+                width: 50%;
+                padding: 3rem;
+
+                .name {
+                    color: $secondary;
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+
+                .content {
+                    color: rgb(61, 61, 61);
+                    padding: .4rem 0;
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+            }
+
+            .image {
+                width: 40%;
+                height: calc(300px + 5vw);
+            }
+        }
+    }
+}
+
+footer {
+    background: lighten($primary, 20);
+    padding: 4rem 2rem;
+
+    .copy {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        text-align: center;
+        color: #fff;
+        font-size: .95rem;
+    }
+}
+
+@import './media';

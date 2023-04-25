@@ -1,0 +1,143 @@
+@media (max-width:1024px) {
+    main{
+
+        #hero{
+            .introbox{
+                .intro{
+                    font-size: 2.55rem;
+                    padding: 0 2rem;
+                }
+            }
+        }
+        #products {
+            .productgrid {
+                padding: 4rem 1rem;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+
+    .bars{
+        display: block;
+    }
+    header{
+        nav{
+            padding: 1.5rem;
+            height: 65px;
+            background: hsl(0, 41%, 60%);
+
+            ul{
+                display: none;
+            }
+
+           &.active{
+            height: calc(100vh - 20px);
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: start;
+            gap: 4rem;
+            .logo{
+                align-self: flex-start;
+            }
+
+            ul{
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                height: 40vh;
+                justify-content: space-between;
+
+                a{
+                    text-align: center;
+                }
+            }
+           }
+        }
+    }
+
+    main{
+        #products{
+            .productgrid{
+                padding: 4rem 0;
+            }
+        }
+        #testimonials{
+            .testimonialflex{
+                gap: 1rem;
+                .image{
+                    height: 300px;
+                }
+
+                .testimonial{
+                    padding: 1rem;
+                    width: 55%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:700px) {
+    main{
+
+        #hero{
+            .introbox{
+                .intro{
+                    font-size: 1.9rem;
+                    padding: 1rem;
+                }
+            }
+        }
+
+        #products {
+            .productgrid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        #about{
+            .abouttext{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width:500px) { 
+
+    .page{
+        padding: 4rem .65rem 3rem;
+    }
+   main{
+    #products{
+        .productgrid {
+            gap: 3rem .3rem ;
+            padding: 4rem 0;
+
+            .product{
+                .details{
+                    padding: .5rem .5rem 4rem;
+                }
+            }
+        }
+   }
+}
+
+#testimonials{
+    .testimonialflex{
+        flex-direction: column;
+
+        .image,.testimonial{
+            width: 100% !important;
+        }
+
+        .testimonial{
+            padding: 3rem 1rem !important;
+        }
+    }
+}
+}
